@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import image from '../public/images/earthquake.png'
+
 
 const Marker = ({ text }) => <div>{text}</div>;
+
+// const image = <img src='../public/images/earthquake.png'></img>
+// const image = <a href='' className='Here'>Here</a>
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -19,14 +24,15 @@ class SimpleMap extends Component {
 	      	  <Marker key={index}
 	            lat={item.geometry.coordinates[1]}
 	            lng={item.geometry.coordinates[0]}
-	            text={item.properties.title}
+	            text=<img src={image} className='img'/>
+              hover={item.properties.title}
 				/>	
 			)
 		})
 
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height:'100vh', width: '100%' }}>
+      <div style={{ height:'90vh', width: '100%' }}>
         <GoogleMapReact 
           bootstrapURLKeys={{ key: ""}}
           defaultCenter={this.props.center}

@@ -11,9 +11,8 @@ body {
 }
 
 .mapContainer {
-  width: 40%;
-  padding-top: 2em; 
-  padding-left: 2em;
+  width: 50%;
+  padding-top: 3em; 
 }
 
 .quakeContainer {
@@ -26,4 +25,8 @@ body {
 #info{
   font-size: 15px;
   padding: 10px;
+}
+
+.img {
+   width: 20px;
 }
