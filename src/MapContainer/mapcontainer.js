@@ -16,9 +16,9 @@ class SimpleMap extends Component {
 
   	const quakesComposed = this.props.earthquakes.map((item, index)=> {
 			return (
-	      	  <Marker key={this.index}
-	            lat={item.geometry.coordinates[0]}
-	            lng={item.geometry.coordinates[1]}
+	      	  <Marker key={index}
+	            lat={item.geometry.coordinates[1]}
+	            lng={item.geometry.coordinates[0]}
 	            text={item.properties.title}
 				/>	
 			)
@@ -26,15 +26,13 @@ class SimpleMap extends Component {
 
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
+      <div style={{ height:'100vh', width: '100%' }}>
+        <GoogleMapReact 
           bootstrapURLKeys={{ key: ""}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-
         {quakesComposed}
-
         </GoogleMapReact>
       </div>
     );
