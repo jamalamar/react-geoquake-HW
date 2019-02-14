@@ -12,7 +12,7 @@ getEarthquakes = async () => {
 		const earthquakes = await fetch('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02');
 		const earthquakesJson = await earthquakes.json();
 			this.setState({
-				earthquakes: earthquakesJson
+				earthquakes: earthquakesJson.features
 			});
 			return earthquakesJson;
 	
@@ -28,8 +28,17 @@ getEarthquakes = async () => {
     }
 
 	render(){
+
+		const quakesComposed = this.state.earthquakes.map((item, index)=> {
+			return (
+				<div key={this.index}>
+				<li>{item.properties.title}</li>
+				</div>
+			)
+		})
+
 		return(
-			<h1>Earthquakes yes yes yes</h1>
+			<ul>{quakesComposed}</ul>
 			)
 	}
 }
