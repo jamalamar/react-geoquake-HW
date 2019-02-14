@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EarthquakeContainer from './EarthquakeContainer/earthquakecontainer.js'
 import MapContainer from './MapContainer/mapcontainer.js'
+import './index.css'
 
 
 class App extends Component {
@@ -37,8 +38,8 @@ getEarthquakes = async () => {
           <MapContainer earthquakes={this.state.earthquakes}/>
         </div>
         <div className="quakeContainer">
-          <h1>Earthquakes from the past week: </h1>
-          <EarthquakeContainer earthquakes={this.state.earthquakes}/>
+          <h1>Earthquakes in the last 30 days</h1>
+          <EarthquakeContainer earthquakes={this.state.earthquakes} className='EarthquakesList'/>
         </div>
       </div>
     );

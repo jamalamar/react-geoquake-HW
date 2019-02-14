@@ -14,12 +14,16 @@ body {
   width: 40%;
   padding-top: 2em; 
   padding-left: 2em;
-  background-color: lightblue;
 }
 
 .quakeContainer {
   width: 40%;
   padding-top: 2em; 
   padding-right: 2em;
-  background-color: pink;
+}
+
+
+#info{
+  font-size: 15px;
+  padding: 10px;
 }
