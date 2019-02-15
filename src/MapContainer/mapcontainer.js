@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import image from '../public/images/earthquake.png'
+import image from '../images/earthquake.png'
 
 
 const Marker = ({ text }) => <div>{text}</div>;
